@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="Autonomous Soft Robotic Guidewire Navigation via Imitation Learning">
+  <meta name="description" content="Toward Autonomous Soft Robotic Endovascular Navigation via Imitation Learning">
   <meta name="keywords" content="Robotics, Imitation Learning, Endovascular Surgery, Medical Robotics">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Soft Robot Guidewire Navigation</title>
+  <title>Soft Robot Endovascular Navigation</title>
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -26,9 +26,9 @@
 
   <link rel="icon" href="todo">
 
-  <meta property="og:site_name" content="Autonomous Soft Robotic Guidewire Navigation via Imitation Learning" />
+  <meta property="og:site_name" content="Toward Autonomous Soft Robotic Endovascular Navigation via Imitation Learning" />
   <meta property="og:type" content="video.other" />
-  <meta property="og:title" content="Autonomous Soft Robotic Guidewire Navigation via Imitation Learning" />
+  <meta property="og:title" content="Toward Autonomous Soft Robotic Endovascular Navigation via Imitation Learning" />
   <meta property="og:description" content="by anonymous" />
   <meta property="og:url" content="todo" />
   <meta property="og:image" content="todo" />
@@ -40,7 +40,7 @@
 
   <meta property="article:publisher" content="todo" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Autonomous Soft Robotic Guidewire Navigation via Imitation Learning" />
+  <meta name="twitter:title" content="Toward Autonomous Soft Robotic Endovascular Navigation via Imitation Learning" />
   <meta name="twitter:description" content="by anonymous" />
   <meta name="twitter:url" content="todo" />
   <meta name="twitter:image" content="todo" />
@@ -61,13 +61,13 @@
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-two-thirds is-centered has-text-centered">
-          <h1 class="title is-1 publication-title">Autonomous Soft Robotic Guidewire Navigation via Imitation Learning</h1>
+          <h1 class="title is-1 publication-title">Toward Autonomous Soft Robotic Endovascular Navigation via Imitation Learning</h1>
         </div>
       </div>
       <div class="columns is-centered">
           <div class="column is-two-thirds has-text-centered">
             <video controls autoplay loop muted playsinline style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;">
-              <source src="./resources/tasks/teaser_ours.mp4" type="video/mp4">
+              <source src="./resources/tasks/teaser_ours_v2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
           </div>
@@ -84,28 +84,29 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            In endovascular surgery, endovascular interventionists
-            push a thin tube called a catheter, guided by a thin wire to a
-            treatment site inside the patient’s blood vessels to treat various
-            conditions such as blood clots, aneurysms, and malformations.
-            Guidewires with robotic tips can enhance maneuverability, but
-            they present challenges in modeling and control. Automation
-            of soft robotic guidewire navigation has the potential to over-
-            come these challenges, increasing the precision and safety of
-            endovascular navigation. In other surgical domains, end-to-end
-            imitation learning has shown promising results. Thus, we develop
-            a transformer-based imitation learning framework with goal
-            conditioning, relative action outputs, and automatic contrast
-            dye injections to enable generalizable soft robotic guidewire
-            navigation in an aneurysm targeting task. We train the model
-            on 36 different modular bifurcated geometries, generating 647
-            total demonstrations under simulated fluoroscopy, and evaluate
-            it on three previously unseen vascular geometries. The model
-            can autonomously drive the tip of the robot to the aneurysm
-            location with a success rate of 83% on the unseen geometries,
-            outperforming several baselines. In addition, we present ablation
-            and baseline studies to evaluate the effectiveness of each design
-            and data collection choice.
+            In endovascular surgery, endovascular interventionists push a 
+            thin tube called a catheter, guided by a thin wire to a treatment 
+            site inside the patient's blood vessels to treat various 
+            conditions such as blood clots, aneurysms, and malformations. 
+            Robotic guidewires can enhance maneuverability but are difficult 
+            to model and control. Autonomous soft robotic guidewire navigation 
+            has the potential to overcome these challenges, increasing the 
+            precision and safety of endovascular navigation. As a first step, 
+            we establish a large-scale, 2D-projected environment for autonomous 
+            navigation. In other surgical domains, end-to-end imitation 
+            learning has shown promising results. Thus, we develop a 
+            transformer-based imitation learning framework with goal 
+            conditioning, relative action outputs, and automatic contrast dye 
+            injections to enable generalizable soft robot navigation in an 
+            aneurysm targeting task. We train the policy on 36 different 
+            modular bifurcated geometries, generating 647 total demonstrations 
+            under simulated fluoroscopy, and evaluate it on three previously 
+            unseen vascular geometries. The policy reaches the aneurysm with a 
+            success rate of 83% on the unseen geometries, outperforming 
+            several baselines. In addition, ablation and baseline studies 
+            evaluate the effectiveness of each design and data collection 
+            choice. Lastly, we extend the policy to achieve 75% success on 
+            an unseen patient-derived geometry.
           </p>
         </div>
       </div>
@@ -195,26 +196,26 @@
 
 <section class="section">
   <div class="container">
-    <h2 class="title is-2" style="text-align: center;">Extrapolation to New Visual Feedback</h2>
+    <h2 class="title is-2" style="text-align: center;">Extension to increasingly realistic environments</h2>
     <div class="columns is-centered has-text-centered">
       <div class="column is-two-thirds">
         <div class="content has-text-justified">
           <p>
-            The policy can generalize to differing visual feedback, such as a roadmap overlay. In this feedback mode,
-            commonly used by clinicians, the vessel roadmap is overlayed on the live view. However, the registration 
-            of the static roadmap vessels to the live, deforming vessels can be inaccurate.
+            With slight adaptation, the policy can generalize to more difficult environments,
+            including a tortuous patient-derived geometry, imaging with more noise and background 
+            artifacts, shorter contrast injection durations, and dynamical anatomical motion.
           </p>
         </div>
       </div>
     </div>
     <div class="columns is-centered">
       <div class="column is-three-fifths is-centered has-text-centered">
-        <video controls autoplay loop muted playsinline src="./resources/tasks/ours_gen_overlay_5.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video controls autoplay loop muted playsinline src="./resources/tasks/patient_derived_left.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
       </div>
     </div>
     <div class="columns is-centered">
       <div class="column is-three-fifths is-centered has-text-centered">
-        <video controls autoplay loop muted playsinline src="./resources/tasks/ours_gen_overlay_6.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
+        <video controls autoplay loop muted playsinline src="./resources/tasks/patient_derived_right.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; margin: 1.0%;"></video>
       </div>
     </div>
   </div>
@@ -235,11 +236,11 @@
             the small-scale. In addition, we isolate our focus to a single bifurcation projected to a 2D plane. In a real case, 
             navigation can be reduced to traversing a single bifurcation at a time, which often lies roughly in a plane after 
             appropriate C-arm positioning. With this setup, we preserve several core difficulties of endovascular intervention: 
-            unpredictable vessel-tool forces via a soft robotic steerable guidewire attached to a flexible tube; high 
+            unpredictable vessel-tool forces via a steerable soft robot attached to a flexible tube; high 
             geometrical variation via modular 3D-printed vessel mazes; and ambiguous and incomplete visual feedback via a 
             fluoroscopy simulator.
           </p>
-          <img src="resources/imgs/introfig_horizontal.png" alt="Descriptive text about the image" style="max-width: 100%; height: auto;">
+          <img src="resources/imgs/introfig_horizontal_v2.png" alt="Descriptive text about the image" style="max-width: 100%; height: auto;">
         </div>
 
         <div class="content has-text-justified">
@@ -259,7 +260,7 @@
         
         <div class="content has-text-justified">
           <p>
-            To control the soft robotic guidewire, a user inputs force commands through a teleoperated control handle. These forces are 
+            To control the soft robot, a user inputs force commands through a teleoperated control handle. These forces are 
             proportionally mapped to the bending and translation velocities of the robot, achieved by the syringe pump and translation 
             drive, respectively.  
           </p>
@@ -284,7 +285,6 @@
           <p></p>
           <img src="resources/imgs/all_mazes.png" alt="Descriptive text about the image" style="display: block; max-width: 65%; height: auto; margin: 0 auto">
         </div>
-        
       </div>
     </div>
   </div>
@@ -297,7 +297,7 @@
       <div class="column is-two-thirds">
         <div class="content has-text-justified">
           <p>
-            We use a transformer-based action chunking model for soft robotic guidewire navigation, inspired by the Surgical Robot Transformer (SRT) <a href="https://surgical-robot-transformer.github.io/">[4]</a> 
+            We use a transformer-based action chunking model for soft robotic endovascular navigation, inspired by the Surgical Robot Transformer (SRT) <a href="https://surgical-robot-transformer.github.io/">[4]</a> 
             which applies <a href="https://tonyzhaozh.github.io/aloha/Action-Chunking Transformers">[5]</a> to surgical tasks with the da Vinci robot. 
           </p>
           <img src="resources/imgs/algopic_color_wide.png" alt="Descriptive text about the image" style="max-width: 100%; height: auto;">
@@ -359,6 +359,39 @@
               prediction) as our proposed model. We evaluated all these policies on the novel geometries test set.
           </p>
           <img src="resources/imgs/baseline_result.png" alt="Descriptive text about the image" style="display: block; max-width: 100%; height: auto; margin: 0 auto; padding: 0;">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2" style="text-align: center;">Neurointerventional Case Study</h2>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <div class="content has-text-justified">
+          <p>
+            To evaluate whether our framework extends beyond the modular, single-bifurcation geometries,
+            we executed a neurointerventional case study experiment. We projected a patient's CT into a 
+            two-dimensional maze. We also adjusted the fluoroscopy simulator parameters, to decrease the 
+            contrast-to-noise ratio (CNR), add background bones and artifacts, and implemented heartbeat-induced 
+            motion. To align visual appearances between the new geometry and our original training set geometries,
+            we cropped the fluoroscopic view around the robot's tip point and rotated it to align with the 'forward'
+            direction before input to the model. Finally, we explored alternative goal-map formulations, such as 
+            a goal-map that uses a gradient along the vessel path towards the goal, and one that includes a discrete
+            goal aneurysm circle overlay.
+          </p>
+          <img src="resources/imgs/neuro_methods.png" alt="Descriptive text about the image" style="max-width: 70%; display: block; height: auto; margin: 0 auto">
+          <p>
+             The “enhanced path” policy achieved the highest overall success rate of 75%. The “path” 
+             policy achieved comparable success on the left target, but
+              often skipped past the right target and stalled nearby. The
+              “x-y” policy exhibited similar right-target failure modes and gen-
+              erally failed to traverse the first high-curvature bifurcation
+              leading to the left target. 
+          </p>
+          <img src="resources/imgs/neuro_results.png" alt="Descriptive text about the image" style="max-width: 50%; height: auto; display: block; margin: 0 auto">
         </div>
       </div>
     </div>
